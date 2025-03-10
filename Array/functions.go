@@ -1,5 +1,7 @@
 package Array
 
+import "fmt"
+
 // Reverse Array
 func ReverseArray(array []int) []int {
 	i, j := 0, len(array)-1
@@ -19,4 +21,32 @@ func FindLargestElement(array []int) int {
 		}
 	}
 	return largest
+}
+
+// Find Duplicates
+func FindDuplicates(array []int) {
+	slice := []int{}
+	newMap := make(map[int]int)
+	for _, i := range array {
+		newMap[i]++
+	}
+	for i, j := range newMap {
+		if j > 1 {
+			slice = append(slice, i)
+		}
+	}
+	fmt.Println("Duplicates: ", slice)
+}
+
+// Remove Duplicates(with Duplicate occuring once)
+func RemoveDuplicates(array []int) {
+	slice := []int{}
+	newMap := make(map[int]int)
+	for _, i := range array {
+		newMap[i]++
+	}
+	for i, _ := range newMap {
+		slice = append(slice, i)
+	}
+	fmt.Println("Duplicates removed : ", slice)
 }
