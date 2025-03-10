@@ -1,5 +1,8 @@
 package Array
 
+/* Array is a collection of elements into a single variable of same type.
+Basically array have a definite size or we can use slice or variadic parameter[...] for making array dynamic */
+
 import "fmt"
 
 // Reverse Array

@@ -1,6 +1,9 @@
 package String
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 // Check Palindrome
 func CheckPalindrome(s string) {
@@ -26,4 +29,23 @@ func FindfirstNonRepeating(s string) {
 			return
 		}
 	}
+}
+
+// Reverse String
+func ReverseString(s string) {
+	for i := len(s) - 1; i >= 0; i-- {
+		fmt.Print(string(s[i]))
+	}
+}
+
+// Count vowels
+func CountVowels(s string) {
+	text := strings.ToLower(s)
+	count := 0
+	for i := 0; i < len(text)-1; i++ {
+		if text[i] == 'a' || text[i] == 'e' || text[i] == 'i' || text[i] == 'o' || text[i] == 'u' {
+			count++
+		}
+	}
+	fmt.Println("Count of vowels :", count)
 }
